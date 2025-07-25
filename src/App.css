@@ -1,5 +1,6 @@
 body {
-  background: #26a69a; /* Teal background color */
+  background: #ffffff;
+  /* White background color */
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -43,7 +44,8 @@ p {
   flex: 1;
 }
 
-input, select {
+input,
+select {
   width: 100%;
   padding: 10px;
   margin-top: 5px;

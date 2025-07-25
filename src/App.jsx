@@ -7,14 +7,16 @@ function App() {
   const [isExclusive, setIsExclusive] = useState(true);
 
   const calculateGST = () => {
+    const parsedAmount = parseFloat(amount);
     if (isExclusive) {
-      const gstAmount = amount * (gstRate / 100);
-      const totalAmount = parseFloat(amount) + gstAmount;
+      const gstAmount = parsedAmount * (gstRate / 100);
+      const totalAmount = parsedAmount + gstAmount;
       return { gstAmount, totalAmount };
     } else {
-      const originalAmount = amount / (1 + gstRate / 100);
-      const gstAmount = amount - originalAmount;
-      return { gstAmount, totalAmount: amount };
+      const originalAmount = parsedAmount / (1 + gstRate / 100);
+      const gstAmount = parsedAmount - originalAmount;
+      const totalAmount = parsedAmount;
+      return { gstAmount, totalAmount };
     }
   };
 
